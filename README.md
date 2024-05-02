@@ -1,3 +1,1 @@
-# oct2023WeekdayRepo
-testmy file
-NOW CHECK 
+my-java-app
