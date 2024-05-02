@@ -25,6 +25,7 @@ jobs:
           -Dsonar.organization=my-org
           -Dsonar.projectKey=my-Java-web-app
       env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        SONAR_TOKEN: sqa_9045114cc3b6182ea8e78dd49f619e12f177c2c2
+
+        SONAR_HOST_URL: http://ec2-13-59-90-124.us-east-2.compute.amazonaws.com:9000
    
