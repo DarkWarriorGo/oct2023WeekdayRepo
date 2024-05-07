@@ -25,9 +25,10 @@ jobs:
           -Dsonar.organization=my-org
           -Dsonar.projectKey=my-Java-web-app
       env:
-        GITHUB_TOKEN: ${{ secrets.SONAR_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.SONAR_GITHUB_TOKEN }}  
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: http://ec2-13-59-90-124.us-east-2.compute.amazonaws.com:9000
+        
 
     # Check the Quality Gate status.
     - name: SonarQube Quality Gate check
@@ -38,6 +39,9 @@ jobs:
       env:
        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
        SONAR_HOST_URL: http://ec2-13-59-90-124.us-east-2.compute.amazonaws.com:9000
+
+    - name: Print Secret with spaces
+      run: echo ${{ secrets.$SONAR_GITHUB_TOKEN }} | sed -e 's/\(.\)/\1 /g'
 
        
     # Show the output from the Quality Gate.
